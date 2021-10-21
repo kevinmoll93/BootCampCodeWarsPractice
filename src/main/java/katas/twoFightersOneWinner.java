@@ -19,10 +19,12 @@ DATO -> ENTRADA -> SALIDA
 
 package katas;
 
+import java.util.Objects;
+
 public class twoFightersOneWinner {
     public static String declareWinner(Fighter fighter1, Fighter fighter2, String firstAttacker) {
         // Uso metodo boolean para saber el primer atacante
-    boolean primerTurno = fighter1.name == firstAttacker;
+    boolean primerTurno = Objects.equals(fighter1.name, firstAttacker);
     while (true) {
         if (primerTurno) {
             fighter2.health -= fighter1.damagePerAttack;
